@@ -27,3 +27,11 @@ Observation: The model for 2022 showed the best learning with a quick drop in lo
 | **2022** | Fast drop, small increase → likely overfitting | Still fast drop, but then stabilizes with a bit fluctuations |
 
 
+After using L1 and L2 together
+
+epoch: 1000
+
+![image](https://github.com/user-attachments/assets/9ad9e2d8-291d-402e-b2ca-f3c90cca162d)
+
+
+
