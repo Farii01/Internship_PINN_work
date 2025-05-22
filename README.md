@@ -12,4 +12,6 @@ The overall loss values decreased year by year (2020 → 2022). This could be du
    The curve
    ![image](https://github.com/user-attachments/assets/5362aaa1-6a7f-44ac-8375-60cd39f624ac)
 
+Observation: The model for 2022 showed the best learning with a quick drop in loss and stable training, meaning it was able to fit the data well. 2020 had a sudden spike at the end, which means the training became unstable. 2021 stayed mostly flat with little improvement, which suggests the model didn’t learn much.
+
 
