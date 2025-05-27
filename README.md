@@ -40,6 +40,19 @@ Issues :
 1) We came to know that autograd is not taking Br into account while differentiating and treating it like constant
 2) I filtered thetas with a range (50°, 70°) in degrees, but the grid was in radians.
 3) I faced problems regarding shape: The size of tensor a (7200) must match the size of tensor b (7) at non-singleton dimension 0 means that u_theta (or u_phi) has shape [7200, 1] but Br has shape [7, 1]. That suggests my neural network is correctly producing one prediction per [theta, phi] pair (7200 total), but the input data Br is not matching in shape. This happens because I am flattened the mf_grid, but it likely has wrong dimensions (like shape (1, 7) or (7,)), meaning only 7 values instead of 7200 (which would be 20 × 360 if your theta and phi filters work correctly).
+To fix the thirds issue:
+Remembered pytorch takes 2D shape: [batch_size, num_features]
+So I just sliced everything to make sure all are same 
+example:
+mf_grid shape: (20, 360) 
+sv_grid shape: (20, 360)
+
+20 values of theta (colatitude) and 360 values of phi (longitude)
+
+the number of grid points 20 × 360 = 7200 
+now I have shape of all [7200, 1] which is [batch_size, num_features]
+
+In other words, I have 7200 input points, and for each point, 1 value (like theta or Br)vThis is exactly what PyTorch models expect — and why we always flatten and reshape that way.
 
 
 
