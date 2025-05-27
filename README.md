@@ -35,6 +35,16 @@ epoch: 1000
 
 
 
+Issues :
+
+1) We came to know that autograd is not taking Br into account while differentiating and treating it like constant
+2) I filtered thetas with a range (50°, 70°) in degrees, but the grid was in radians.
+3) I faced problems regarding shape: The size of tensor a (7200) must match the size of tensor b (7) at non-singleton dimension 0 means that u_theta (or u_phi) has shape [7200, 1] but Br has shape [7, 1]. That suggests my neural network is correctly producing one prediction per [theta, phi] pair (7200 total), but the input data Br is not matching in shape. This happens because I am flattened the mf_grid, but it likely has wrong dimensions (like shape (1, 7) or (7,)), meaning only 7 values instead of 7200 (which would be 20 × 360 if your theta and phi filters work correctly).
+
+
+
+
+
 
 
 
