@@ -62,6 +62,7 @@ Update:
 
 with  lemda 10 and 
 Parameters:
+learning rate : 0.001
 node_inputs = 2
 node_outputs = 2
 node_layer = 64
@@ -86,6 +87,22 @@ Result
 
 
 ![image](https://github.com/user-attachments/assets/60da10c2-29f5-45bd-b710-e2a7ba72a617)
+
+After
+lambda_values = [0, 0.1, 1, 10, 100]
+
+| λ   | Total Loss ↓ | L1 (Data Fit) ↓ | L2 (Constraint) | Behavior Summary                          |
+| --- | ------------ | --------------- | --------------- | ----------------------------------------- |
+| 0   | **964.77**   | 964.77          | \~0.0001        | **Best data fit**, but ignores constraint |
+| 0.1 | 1731.73      | 1731.73         | \~0.0001        | Slight regularization, L1 still dominates |
+| 1   | 2641.22      | 2641.22         | \~0.0001        | Balanced trade-off, constraint felt a bit |
+| 10  | 1955.09      | 1955.09         | \~0.0001        | Good regularization, stable loss          |
+| 100 | 2179.31      | 2179.30         | \~0.0001        | Very strong regularization, less data fit |
+
+
+
+
+
 
 
 
