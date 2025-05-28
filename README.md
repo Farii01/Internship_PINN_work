@@ -55,6 +55,41 @@ now I have shape of all [7200, 1] which is [batch_size, num_features]
 In other words, I have 7200 input points, and for each point, 1 value (like theta or Br)vThis is exactly what PyTorch models expect — and why we always flatten and reshape that way.
 
 
+Updated code:
+
+Update:
+
+
+with  lemda 10 and 
+Parameters:
+node_inputs = 2
+node_outputs = 2
+node_layer = 64
+hidden_layers = 3
+
+Result
+ Epoch 987 --- Loss 1487.868286--- Loss_L1 1487.867554--- Loss_L2 0.000077
+ Epoch 988 --- Loss 1485.363281--- Loss_L1 1485.362549--- Loss_L2 0.000077
+ Epoch 989 --- Loss 1483.214844--- Loss_L1 1483.214111--- Loss_L2 0.000077
+ Epoch 990 --- Loss 1481.253662--- Loss_L1 1481.252930--- Loss_L2 0.000077
+ Epoch 991 --- Loss 1479.261719--- Loss_L1 1479.260986--- Loss_L2 0.000077
+ Epoch 992 --- Loss 1477.135254--- Loss_L1 1477.134521--- Loss_L2 0.000077
+ Epoch 993 --- Loss 1474.908813--- Loss_L1 1474.908081--- Loss_L2 0.000077
+ Epoch 994 --- Loss 1472.700684--- Loss_L1 1472.699951--- Loss_L2 0.000077
+ Epoch 995 --- Loss 1470.617798--- Loss_L1 1470.617065--- Loss_L2 0.000077
+ Epoch 996 --- Loss 1468.672607--- Loss_L1 1468.671875--- Loss_L2 0.000077
+ Epoch 997 --- Loss 1466.808350--- Loss_L1 1466.807617--- Loss_L2 0.000077
+ Epoch 998 --- Loss 1464.942261--- Loss_L1 1464.941528--- Loss_L2 0.000077
+ Epoch 999 --- Loss 1463.019043--- Loss_L1 1463.018311--- Loss_L2 0.000077
+
+![image](https://github.com/user-attachments/assets/298b194a-2ae4-4eab-9e44-9bc602db6463)
+
+
+![image](https://github.com/user-attachments/assets/60da10c2-29f5-45bd-b710-e2a7ba72a617)
+
+
+
+
 
 
 
