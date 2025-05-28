@@ -100,6 +100,9 @@ lambda_values = [0, 0.1, 1, 10, 100]
 | 100 | 2179.31      | 2179.30         | \~0.0001        | Very strong regularization, less data fit |
 
 
+10 is best trade off
+
+
 
 
 
