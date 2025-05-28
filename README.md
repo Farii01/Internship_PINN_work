@@ -91,14 +91,14 @@ Result
 After
 lambda_values = [0, 0.1, 1, 10, 100]
 
+
 | λ   | Total Loss ↓ | L1 (Data Fit) ↓ | L2 (Constraint) | Behavior Summary                          |
 | --- | ------------ | --------------- | --------------- | ----------------------------------------- |
-| 0   | **964.77**   | 964.77          | \~0.0001        | **Best data fit**, but ignores constraint |
-| 0.1 | 1731.73      | 1731.73         | \~0.0001        | Slight regularization, L1 still dominates |
-| 1   | 2641.22      | 2641.22         | \~0.0001        | Balanced trade-off, constraint felt a bit |
-| 10  | 1955.09      | 1955.09         | \~0.0001        | Good regularization, stable loss          |
-| 100 | 2179.31      | 2179.30         | \~0.0001        | Very strong regularization, less data fit |
-
+| 0   | **964.77**   | 964.77          | \~0.0001        | ignores l2 
+| 0.1 | 1731.73      | 1731.73         | \~0.0001        |  
+| 1   | 2641.22      | 2641.22         | \~0.0001        | 
+| 10  | 1955.09      | 1955.09         | \~0.0001        | The total loss still converges well (~20 million → ~1955).       
+| 100 | 2179.31      | 2179.30         | \~0.0001        | Starts to slow convergence slightly. Between epoch 600–700, loss increases
 
 10 is best trade off
 
