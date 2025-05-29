@@ -83,6 +83,9 @@ Result
  Epoch 998 --- Loss 1464.942261--- Loss_L1 1464.941528--- Loss_L2 0.000077
  Epoch 999 --- Loss 1463.019043--- Loss_L1 1463.018311--- Loss_L2 0.000077
 
+
+ After changing  params, this is the best combination 
+
 ![image](https://github.com/user-attachments/assets/298b194a-2ae4-4eab-9e44-9bc602db6463)
 
 
@@ -101,6 +104,16 @@ lambda_values = [0, 0.1, 1, 10, 100]
 | 100 | 2179.31      | 2179.30         | \~0.0001        | Starts to slow convergence slightly. Between epoch 600–700, loss increases
 
 10 is best trade off
+
+I tried different learning rates but i can see spiles in 
+![image](https://github.com/user-attachments/assets/25afcdde-06fa-4031-b5b7-60af5fba05d6)
+
+
+
+I think we have good enough combination now.
+learning rate is best 5e-4 instead of 0.001 since there are no spikes
+![image](https://github.com/user-attachments/assets/25605b4a-46b7-4eea-84fe-136ba90e31e6)
+
 
 
 
