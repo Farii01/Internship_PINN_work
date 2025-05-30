@@ -116,6 +116,9 @@ learning rate is best 5e-4 instead of 0.001 since there are no spikes
 
 
 
+They saw that L2 was too small by default, and they scaled it not arbitrarily, but to balance the gradient sizes. 
+
+
 
 
 
