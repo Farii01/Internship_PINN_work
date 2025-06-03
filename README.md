@@ -119,6 +119,26 @@ learning rate is best 5e-4 instead of 0.001 since there are no spikes
 They saw that L2 was too small by default, and they scaled it not arbitrarily, but to balance the gradient sizes. 
 
 
+3rd june
+
+ I struggled at first with how the patch-specific data like theta, phi grids, and magnetic field values were handled. Initially, these inputs were outside the training loop, which caused confusion and errors because the model wasn’t receiving the correct data for each patch during training.
+
+After some debugging and clarification, I moved all the patch-specific tensor creation (thetas_nn, phis_nn, Br_nn, dBrdt_nn, dBrdth_nn, dBrdph_nn) inside the training loop. This way, for every patch and every training iteration, the model gets the exact inputs it needs, making the training consistent and correct. and passed the params to compute function where all my calculations are. This helped me ensure that the radial induction equation and quasi-geostrophic constraints are properly enforced in the loss.
+
+Overall today i did these:
+1) At the CMB, the SV varies between ±20 µT/year. By keeping r in kilometers, rather than converting it into meters, the total loss could be squared to µT/year. How does this help?
+I kept r in kilometers
+
+2) How to check if the loss on the grid is homogeneous or heterogeneous?
+I plotted the loss on the spatial grid to visualize where errors are higher or lower, which helps understand model performance spatially.
+
+3) How to generate and average multiple realizations for the same square (with different initial conditions)?
+I trained the model multiple times on the same patch with different random initializations and averaged the loss results to get a good estimate.
+
+4) How to compute for the whole map by solving for several overlapping small squares and wrap everything at the end?
+I tiled the globe (avoiding poles and equator) with overlapping small patches, trained separately on each, then planned to stitch the patch results to form a global solution.
+
+
 
 
 
