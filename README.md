@@ -139,6 +139,31 @@ I trained the model multiple times on the same patch with different random initi
 I tiled the globe (avoiding poles and equator) with overlapping small patches, trained separately on each, then planned to stitch the patch results to form a global solution.
 
 
+Finally after running different patches over the world i get
+
+![image](https://github.com/user-attachments/assets/653c25fa-fc7d-43b9-9250-3f27a62486b4)
+
+
+I
+
+
+
+the loss starts very high and decreases as expected, which is good — the model is learning.
+
+The sudden spike in loss around epoch ~90 indicates numerical instability or exploding gradients at that training point. which i am trying to fix
+
+
+1st approch) I am reducing the learning rate  to 0.0001
+I tried: Try lowering the learning rate a bit to avoid these spikes.
+- Use gradient clipping if you haven’t yet — it prevents gradients from exploding.
+
+-Monitor if the loss spikes cause training to diverge eventually — if yes, early stopping or smaller steps may be needed.
+
+-Run longer training epochs and see if the curve smooths out.
+
+--Check if batch size or data preprocessing influences stability.
+
+-now: ![image](https://github.com/user-attachments/assets/ccd7caf0-f638-4b07-a2e7-eaaa59b43d3c)
 
 
 
