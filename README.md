@@ -168,6 +168,51 @@ I tried: Try lowering the learning rate a bit to avoid these spikes.
 
 
 
+Roadmap:
+
+Here's an updated roadmap:
+
+1) ☑ Implementing the NN code, solving the fields T and S
+2) ☑ Solving on a small square (25° x 40°)
+
+2b) ☑ Rewrite the code: wrapping the equation into a callable function (easier to work with)
+
+3) ☑ Playing with the lambda parameter (where Loss = L1**2 + lambda * L2**2) to see how it is affecting the convergence.
+3b) ☑ Playing with the NN parameters (number of layers, number of nodes, algorithm, learning-rate, learning ramp, etc.)
+3c) ☑ Playing with the square size: finding the balance between the square size, the learning-rate and the total loss.
+
+At the CMB, the SV varies between ±20 µT/year. By keeping r in kilometers, rather than converting it into meters, the total loss could be squared to µT/year. I would give an ideal of how well the model is fitting the data. Also, a good idea would be to plot the loss on the grid: is the loss homogeneous or heterogeneous?
+
+4) ☑ Generate and average multiple realizations for the same square (with different initial conditions)
+5) ☑ Computing for the whole map: solving for several (overlapping) small square over the whole map and wrapping everything at the end (still avoiding the poles and the equator).
+
+To do:
+
+6) Comparison with core flow computed with other methods (we already have this data).
+
+NEW!
+8) Compare the results with Shakespear-Rees et al. Does the field (SV or reconstructed U) resembles that of the paper (Inside a single square)?
+9) How does the results vary with the input parameters (we can make a systematic study on a single square, far enough from the poles and the equator)
+    Parameters to play with:
+        - number of hidden layers (from 1 to 8)
+        - number of nodes (from 16 to 64)
+        - number of epochs (from 100 to 1000)
+        - number of iterations (from 1 to 10)
+        - Learning rate
+        - Size of the square
+
+By varying these parameters and saving the loss value in each case, we can (hopefully) retrieve the best compromise between the convergence and the computation time.
+To do so, we can compute (as Nicolas said) the complexity of the solution (e.g. L2 measure of the flow norm) vs misfit to the data (L2 measure of the SV misfit).
+
+10) On two neighbour squares, we can play on the buffer size (5°, 10°, 15°, 20°) and check the continuity between these two.
+
+The whole idea is to seek for optimal parameters before solving on the whole grid, as the procedure is computationally expensive. Also, I suggest you to switch on the reanalysed COV-OBS.x2 data to access the reanalysed core flow, and compare it with the reconstructed one.
+
+
+
+
+
+
 
 
 
