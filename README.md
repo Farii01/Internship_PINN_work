@@ -188,6 +188,8 @@ At the CMB, the SV varies between ±20 µT/year. By keeping r in kilometers, rat
 
 To do:
 
+Connect to lab cluster
+
 6) Comparison with core flow computed with other methods (we already have this data).
 
 NEW!
