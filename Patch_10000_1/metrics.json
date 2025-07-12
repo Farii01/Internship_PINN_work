@@ -1,0 +1,23 @@
+{
+  "rmse": 74.59133911132812,
+  "mae": 55.622703552246094,
+  "rel_err": 0.020395084580790483,
+  "complexity": 3.6138522729878275e-10,
+  "region": "25\u00b0 colatitude",
+  "model_name": "COVOBS-x2_400reals.hdf5",
+  "node_inputs": 2,
+  "node_outputs": 3,
+  "node_layer": 20,
+  "hidden_layers": 10,
+  "learning_rate": 0.001,
+  "epochs": 10000,
+  "lamda": 1000,
+  "patch": [
+    15,
+    35,
+    15,
+    35
+  ],
+  "theta_size": 30,
+  "phi_size": 30
+}
