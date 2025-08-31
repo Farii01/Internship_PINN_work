@@ -1,0 +1,29 @@
+time_of_study: 2020
+number_of_inputs: 2
+number_of_outputs: 3
+number_of_layers: 1
+number_of_neurons: 16
+number_epochs: 10000
+fine_tune: True
+number_steps: 500
+grid_size: 3
+patch: (95, 175, 275, 355)
+use_synthetic_sv: True
+estimate_small_scale_br: False
+filter_br: True
+sigma_filter_br: 0.01
+
+lambda parameters:
+  lambda_dbrdt = 1
+  lambda_br    = 1
+  lambda_tg    = 10000.0
+  lambda_tor   = 0
+  lambda_wn    = 0.0001
+  lambda_sn    = 0
+  lambda_ff    = 0
+
+losses:
+  misfit_dbrdt: 1
+  misfit_br: 1
+  tangential_geostrophy: 10000.0
+  weak_norm: 0.0001
